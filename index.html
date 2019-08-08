@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html, body {
+           height: 100%;
+           overflow: hidden;
+       }
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       ul {
+           list-style: none;
+       }
+       .wrapper {
+           position: relative;
+           height: 100%; 
+           overflow: scroll;
+       }
+       .tab {
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           height: 40px;
+           line-height: 40px;
+           text-align: center;
+           font-size: 14px;
+           color: #000;
+           border-bottom: 1px solid red;
+           background: #fff;
+           z-index: 10;
+       }
+ 
+       .list {
+           position: absolute;
+           top: 40px;
+           left: 0;
+           right: 0;
+           background: #fff;
+           z-index: 2
+       }
+ 
+       .item {
+           margin-bottom: 10px;
+           height: 80px;
+           line-height: 80px;
+           padding-left: 20px;
+           border-bottom: 1px solid #ededed;
+           background: #f4f4f4
+       }
+       .text {
+           position: absolute;
+           left: 0;
+           right: 0;
+           text-align: center;
+           height: 30px;
+           line-height: 30px;
+           color: rgba(0, 0, 0, .5);
+           z-index: 1
+       }
+ 
+       .top-text {
+           top: -30px
+       }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <p class="tab">选项卡</p>
+        <ul class="list">
+            产品须知图文详情
+            城互动hi是的范德萨好地方烦得很电话电话好吧vbv 城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好
+            吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv
+            吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv
+            吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv城互动hi是的范德萨好地方烦得很电话电话好吧vbv
+        </ul>
+    </div> 
+    <script>
+
+ 
+   let wrapper = document.querySelector('.wrapper');
+   let list = document.querySelector('.list');
+console.log(list.scrollTop+"ff")
+   let sTop; // 触发touch事件时的距离选项卡底部的距离
+   let mTop; // touchmove时距离选项卡底部的位置
+   let eTop; // 记录touchend时的位置
+   let startOffsetTop = 40;// 距离顶部的距离，tab的高度
+   let wScrollTop; // wrapper 节点是否滚动
+   let maxTop = 100; // 最多下拉100px
+   let minTop = 20; // 最小下拉20px,小于20px时不处理
+   window.onload = function(){
+ 
+    wrapper.onscroll = function(){
+     
+           if(isToBottom()){
+      
+           }
+       };
+   };
+   var couter=0;
+   function resize() {
+       let time = setInterval(function () {
+           if (list.offsetTop <= startOffsetTop) {
+               clearInterval(time);
+           } else {
+               list.style.top = list.offsetTop - 1 + 'px';
+
+           }
+       }, 5)
+   }
+
+
+   function isToBottom(){
+
+       if(wrapper.scrollHeight - wrapper.scrollTop - document.body.clientHeight < 1){
+           console.log(couter++);
+      if(couter>=2){
+  window.location.href="link.html"
+      }
+         console.log('底部');
+           return true
+       }
+   }
+    </script>
+</body>
+</html>
